@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="css clas.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!--<marquee>I AM CALC</marquee>-->
+<div class="main">
+<div>
+<form>
+<input type="text" name="display" placeholder="enter values" id="box" value="">
+</form>
+</div>
+<div class="button">
+<div class="row1">
+<button  id="ac" onclick="clr()" >AC</button>
+<button id="del" onclick="del()" >del </button>
+<button id="per" onclick="ope(5)" >%</button>
+<button id="div" onclick="ope(4)">/ </button>
+</div>
+<div class="row2">
+<button id="se" onclick="add(7)" >7 </button>
+<button id="ei"onclick="add(8)">8 </button>
+<button id="ni" onclick="add(9)">9 </button>
+<button id="mul" onclick="ope(3)">* </button>
+</div>
+<div class="row3">
+<button id="fo" onclick="add(4)">4 </button>
+<button id="fi" onclick="add(5)">5 </button>
+<button id="si"  onclick="add(6)">6 </button>
+<button id="su" onclick="ope(2)">- </button>
+</div>
+<div class="row4">
+<button id="on" onclick="add(1)">1 </button>
+<button id="tw" onclick="add(2)">2 </button>
+<button id="th"onclick="add(3)">3 </button>
+<button id="ad" onclick="ope(1)">+ </button>
+
+</div>
+<div class="row5">
+<button onclick="add(0)">0 </button>
+<button onclick="ope(6)">.</button>
+<button onclick="evl()">= </button>
+</div>
+</div>
+</div>
+<script>
+b=""
+function add(n){
+    b=b+n
+    document.getElementById("box").value=b
+}
+function ope(n){
+if(n==1){
+b=b+"+"
+document.getElementById("box").value=b
+}
+else if(n==2){
+b=b+"-"
+document.getElementById("box").value=b
+}
+else if(n==3){
+b=b+"*"
+document.getElementById("box").value=b
+}
+else if(n==4){
+b=b+"/"
+document.getElementById("box").value=b
+}
+else if(n==5){
+b=b+"%"
+document.getElementById("box").value=b
+}
+else if(n==6){
+b=b+'.'
+document.getElementById("box").value=b
+}
+}
+function clr(){
+b=""
+document.getElementById("box").value=b
+}
+function del(){
+b=b.slice(0,-1)
+document.getElementById("box").value=b
+}
+function evl(){
+k=eval(b);
+document.getElementById("box").value=k
+b=k
+}
+
+</script>
+</body>
+
+</html>
